@@ -7,7 +7,10 @@ type Props = {
 
 export const OperationButton: React.FC<Props> = ({ dispatch, operation }) => {
   return (
-    <button onClick={() => dispatch({ type: ACTIONS.CHOOSE_OPERATION, payload: { operation } })}>
+    <button
+      onClick={() =>
+        dispatch({ type: ACTIONS.CHOOSE_OPERATION, payload: { operation, digit: '' } })
+      }>
       {operation}
     </button>
   )
