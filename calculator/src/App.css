@@ -27,10 +27,12 @@ body {
   margin: 5px;
 }
 
-.calculator-grid > button:hover,
-.calculator-grid > button:focus {
+.calculator-grid > button:hover {
   background-color: rgba(0, 0, 0, 0.75);
   color: #fff;
+}
+.calculator-grid > button:active {
+  background-color: transparent;
 }
 
 .span-two {
