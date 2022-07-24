@@ -23,8 +23,8 @@ body {
   border: 1px solid #000;
   outline: none;
   background-color: rgba(255, 255, 255, 0);
-  /* border-radius: 20px; */
-  /* margin: 5px; */
+  border-radius: 20px;
+  margin: 5px;
 }
 
 @media (hover: hover) {
@@ -51,7 +51,8 @@ body {
   padding: 0.75rem;
   word-wrap: break-word;
   word-break: break-all;
-  /* border-radius: 20px; */
+  border-radius: 20px;
+  margin-bottom: 5px;
 }
 
 .output .previous-operand {
