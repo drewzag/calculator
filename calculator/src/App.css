@@ -27,9 +27,11 @@ body {
   /* margin: 5px; */
 }
 
-.calculator-grid > button:hover {
-  background-color: rgba(0, 0, 0, 0.75);
-  color: #fff;
+@media (hover: hover) {
+  .calculator-grid > button:hover {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+  }
 }
 .calculator-grid > button:active {
   background-color: transparent;
