@@ -1,4 +1,4 @@
-import { useReducer } from 'react'
+import { useEffect, useReducer } from 'react'
 import './App.css'
 import { DigitButton } from './DigitButton'
 import { OperationButton } from './OperationButton'
@@ -155,6 +155,28 @@ const App = () => {
     reducer,
     {} as State
   )
+
+  const OPERATIONS: Array<string> = ['/', '*', '+', '-']
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (OPERATIONS.find((el) => el == e.key)) {
+        dispatch({ type: ACTIONS.CHOOSE_OPERATION, payload: { operation: e.key, digit: '' } })
+      } else if (e.key == '.' || 0 <= +e.key || +e.key <= 9) {
+        dispatch({ type: ACTIONS.ADD_DIGIT, payload: { digit: e.key } })
+      } else if (e.key == 'Backspace') {
+        dispatch({ type: ACTIONS.CLEAR, payload: { digit: '' } })
+      } else if (e.key == '=') {
+        dispatch({ type: ACTIONS.EVALUATE, payload: { digit: '' } })
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+
+    return function cleanup() {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
 
   return (
     <div className='calculator-grid'>
