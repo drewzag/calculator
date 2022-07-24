@@ -160,7 +160,7 @@ const App = () => {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (OPERATIONS.find((el) => el == e.key)) {
+      if (OPERATIONS.find((el) => el === e.key)) {
         dispatch({ type: ACTIONS.CHOOSE_OPERATION, payload: { operation: e.key, digit: '' } })
       } else if (e.key == '.' || 0 <= +e.key || +e.key <= 9) {
         dispatch({ type: ACTIONS.ADD_DIGIT, payload: { digit: e.key } })
