@@ -203,7 +203,7 @@ const App = () => {
       <DigitButton digit='7' dispatch={dispatch} />
       <DigitButton digit='8' dispatch={dispatch} />
       <DigitButton digit='9' dispatch={dispatch} />
-      <OperationButton operation='*' dispatch={dispatch} />
+      <OperationButton operation='x' dispatch={dispatch} />
       <DigitButton digit='4' dispatch={dispatch} />
       <DigitButton digit='5' dispatch={dispatch} />
       <DigitButton digit='6' dispatch={dispatch} />
